@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sistem Pendukung Keputusan Metode WP</title>
+	<title>Sistem Pendukung Keputusan Pengambilan Mata Kuliah Pilihan Metode WP</title>
 </head>
 <style>
     table {
@@ -17,7 +17,7 @@
 <table border="1" width="100%">
 	<thead>
 		<tr align="center">
-			<th>Nama Alternatif</th>
+			<th>Nama Mata Kuliah</th>
 			<th>Nilai</th>
 			<th width="15%">Ranking</th>
 		</tr>

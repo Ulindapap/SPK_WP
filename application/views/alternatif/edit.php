@@ -1,7 +1,7 @@
 <?php $this->load->view('layouts/header_admin'); ?>
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-users"></i> Data Alternatif</h1>
+    <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-users"></i> Data Mata Kuliah</h1>
 
 	<a href="<?= base_url('Alternatif'); ?>" class="btn btn-secondary btn-icon-split"><span class="icon text-white-50"><i class="fas fa-arrow-left"></i></span>
 		<span class="text">Kembali</span>
@@ -10,7 +10,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-edit"></i> Edit Data Alternatif</h6>
+        <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-edit"></i> Edit Data Mata Kuliah</h6>
     </div>
 	
 	<?php echo form_open('Alternatif/update/'.$alternatif->id_alternatif); ?>
@@ -18,7 +18,7 @@
 			<div class="row">
 				<?php echo form_hidden('id_alternatif', $alternatif->id_alternatif) ?>
 				<div class="form-group col-md-12">
-					<label class="font-weight-bold">Nama Alternatif</label>
+					<label class="font-weight-bold">Nama Mata Kuliah</label>
 					<input autocomplete="off" type="text" name="nama" value="<?php echo $alternatif->nama ?>" required class="form-control"/>
 				</div>
 			</div>

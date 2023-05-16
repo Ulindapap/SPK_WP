@@ -17,7 +17,7 @@
 			<table class="table table-bordered" width="100%" cellspacing="0">
 				<thead class="bg-primary text-white">
 					<tr align="center">
-						<th>Nama Alternatif</th>
+						<th>Nama Mata Kuliah</th>
 						<th>Nilai (V)</th>
 						<th width="15%">Rank</th>
 					</tr>

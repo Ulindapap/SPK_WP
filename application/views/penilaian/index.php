@@ -18,7 +18,7 @@
 				<thead class="bg-primary text-white">
 					<tr align="center">
 						<th width="5%">No</th>
-						<th>Alternatif</th>
+						<th>Mata Kuliah</th>
 						<th width="15%">Aksi</th>
 					</tr>
 				</thead>

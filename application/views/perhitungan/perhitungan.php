@@ -16,7 +16,7 @@
 				<thead class="bg-primary text-white">
 					<tr align="center">
 						<th width="5%" rowspan="2">No</th>
-						<th rowspan="2">Nama Alternatif</th>
+						<th rowspan="2">Nama Mata Kuliah</th>
 						<?php $total_kriteria = $this->Perhitungan_model->total_kriteria(); ?>
 						<th colspan="<?= $total_kriteria['total_kriteria']; ?>">Kriteria</th>
 					</tr>
@@ -202,7 +202,7 @@
 				<thead class="bg-primary text-white">
 					<tr align="center">
 						<th width="5%">No</th>
-						<th>Nama Alternatif</th>
+						<th>Nama Mata Kuliah</th>
 						<th>Perhitungan</th>
 						<th width="15%">Nilai (V)</th>
 					</tr>
