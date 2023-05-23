@@ -13,11 +13,11 @@
 
             if ($this->session->userdata('id_user_level') != "1") {
             ?>
-				<script type="text/javascript">
-                    alert('Anda tidak berhak mengakses halaman ini!');
-                    window.location='<?php echo base_url("Login/home"); ?>'
-                </script>
-            <?php
+<script type="text/javascript">
+alert('Anda tidak berhak mengakses halaman ini!');
+window.location = '<?php echo base_url("Login/home"); ?>'
+</script>
+<?php
 			}
         }
 
@@ -42,10 +42,12 @@
         public function store()
         {
                 $data = [
-                    'nama' => $this->input->post('nama')
+                    'nama' => $this->input->post('nama'),
+                    'semester' => $this->input->post('semester')
                 ];
                 
                 $this->form_validation->set_rules('nama', 'Nama', 'required');               
+                $this->form_validation->set_rules('semester', 'Semester', 'required');               
     
                 if ($this->form_validation->run() != false) {
                     $result = $this->Alternatif_model->insert($data);
@@ -76,7 +78,8 @@
         {
             $id_alternatif = $this->input->post('id_alternatif');
             $data = array(
-                'nama' => $this->input->post('nama')
+                'nama' => $this->input->post('nama'),
+                'semester' => $this->input->post('semester')
             );
 
             $this->Alternatif_model->update($id_alternatif, $data);

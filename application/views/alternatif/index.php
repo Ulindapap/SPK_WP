@@ -15,38 +15,45 @@
     </div>
 
     <div class="card-body">
-		<div class="table-responsive">
-			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
-					<tr align="center">
-						<th width="5%">No</th>
-						<th>Nama Alternatif</th>
-						<th width="15%">Aksi</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead class="bg-primary text-white">
+                    <tr align="center">
+                        <th width="5%">No</th>
+                        <th>Nama Alternatif</th>
+                        <th>Semester</th>
+                        <th width="15%">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
 						$no=1;
 						foreach ($list as $data => $value) {
 					?>
-					<tr align="center">
-						<td><?=$no ?></td>
-						<td align="left"><?php echo $value->nama ?></td>
-						<td>
-							<div class="btn-group" role="group">
-								<a data-toggle="tooltip" data-placement="bottom" title="Edit Data" href="<?=base_url('Alternatif/edit/'.$value->id_alternatif)?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-								<a  data-toggle="tooltip" data-placement="bottom" title="Hapus Data" href="<?=base_url('Alternatif/destroy/'.$value->id_alternatif)?>" onclick="return confirm ('Apakah anda yakin untuk meghapus data ini')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-							</div>
-						</td>
-					</tr>
-					<?php
+                    <tr align="center">
+                        <td><?=$no ?></td>
+                        <td align="left"><?php echo $value->nama ?></td>
+                        <td align="left"><?php echo $value->semester ?></td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a data-toggle="tooltip" data-placement="bottom" title="Edit Data"
+                                    href="<?=base_url('Alternatif/edit/'.$value->id_alternatif)?>"
+                                    class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                <a data-toggle="tooltip" data-placement="bottom" title="Hapus Data"
+                                    href="<?=base_url('Alternatif/destroy/'.$value->id_alternatif)?>"
+                                    onclick="return confirm ('Apakah anda yakin untuk meghapus data ini')"
+                                    class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php
 						$no++;
 						}
 					?>
-				</tbody>
-			</table>
-		</div>
-	</div>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <?php $this->load->view('layouts/footer_admin'); ?>
