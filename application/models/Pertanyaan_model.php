@@ -25,7 +25,7 @@
             $ubah = array(
                 'pertanyaan'  => $data['pertanyaan'],
                 'alternatif_id'  => $data['alternatif_id'],
-                'kriteria_id'  => $data['kroteria_id'],
+                'kriteria_id'  => $data['kriteria_id'],
             );
 
             $this->db->where('id', $id);
@@ -39,6 +39,12 @@
         public function getKriteria($id_kriteria, $kriteria_id) {
             $result = $this->db->query("SELECT * FROM Kriteria JOIN Pertanyaan WHERE Kriteria.id_kriteria = Pertanyaan.kriteria_id AND Kriteria.id_kriteria = '$id_kriteria' AND Pertanyaan.kriteria_id = '$kriteria_id';");
             return $result->row();
+        }
+
+        public function getQuestion($data) {
+            $this->db->where('semester', $data);
+            $result = $this->db->get('pertanyaan')->result();
+            return $result; 
         }
     }
 ?>

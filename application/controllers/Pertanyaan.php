@@ -29,10 +29,13 @@
         }
 
         public function store() {
+            $alternatif_id = $this->input->post('alternatif_id');
+            $semester = $this->db->query("SELECT * FROM Alternatif WHERE id_alternatif = '$alternatif_id';")->row();
             $data = [
                 'pertanyaan' => $this->input->post('pertanyaan'),
                 'alternatif_id' => $this->input->post('alternatif_id'),
                 'kriteria_id' => $this->input->post('kriteria_id'),
+                'semester' => $semester->semester,
             ];
             
             $this->form_validation->set_rules('pertanyaan', 'Pertanyaan', 'required');               
