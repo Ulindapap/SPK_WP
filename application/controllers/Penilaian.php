@@ -13,11 +13,11 @@
 
             if ($this->session->userdata('id_user_level') != "1") {
             ?>
-				<script type="text/javascript">
-                    alert('Anda tidak berhak mengakses halaman ini!');
-                    window.location='<?php echo base_url("Login/home"); ?>'
-                </script>
-            <?php
+<script type="text/javascript">
+alert('Anda tidak berhak mengakses halaman ini!');
+window.location = '<?php echo base_url("Login/home"); ?>'
+</script>
+<?php
 			}
         }
 
@@ -25,8 +25,7 @@
         {
             $data = [
 				'page' => "Penilaian",
-                'kriteria'=> $this->Penilaian_model->get_kriteria(),
-                'alternatif'=> $this->Penilaian_model->get_alternatif(),
+                'penilaian'=> $this->Penilaian_model->tampil(),
             ];
             $this->load->view('penilaian/index', $data);
         }

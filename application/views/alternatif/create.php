@@ -27,6 +27,12 @@
             </div>
             <div class="col">
                 <div class="form-group col-md-12">
+                    <label class="font-weight-bold">Deskripsi Mata Kuliah</label>
+                    <input autocomplete="off" type="text" name="deskripsi" required class="form-control" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group col-md-12">
                     <label for="exampleFormControlInput1" class="form-label">Kelas</label>
                     <select class="form-control" aria-label="Default select example" name="semester" require>
                         <option value="">Pilih Semester</option>

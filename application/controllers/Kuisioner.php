@@ -10,6 +10,7 @@
             $this->load->model('Kuisioner_model');
             $this->load->model('Pertanyaan_model');
             $this->load->model('Sub_Kriteria_model');
+            $this->load->model('Penilaian_model');
         }
         public function index() {
             $data['page'] = 'Kuisioner';
@@ -17,12 +18,6 @@
         }
         
         public function question() {
-            // $val = $this->input->post('semester');
-            // $data['val'] = 2;
-            // $data['page'] = 'kuisioner';
-            // $this->load->view('penilaian-kuisioner/index', $data);
-            // return json_encode($getQuestion);
-
             $data['page'] = 'Kuisioner';
             $data['value'] = [
                 'nama' => $this->input->post('nama'),
@@ -32,10 +27,7 @@
             ];
             
             $data['question'] = $this->Pertanyaan_model->getQuestion($data['value']['semester']);
-            // $data['subKriteria'] = $this->Sub_Kriteria_model->tampil();
             return $this->load->view('penilaian-kuisioner/question', $data);
-            // echo json_encode($data);
-            // echo json_encode($response);
             
         }
 
@@ -44,12 +36,23 @@
             $answer_list = [];
             $getQuestion = $this->Pertanyaan_model->getQuestion($this->input->post('semester'));
             $question_list = $this->input->post('question');
+            
             foreach($getQuestion as $q) {
                 array_push($answer_list, $this->input->post($q->id));
             }
             $data = array_combine($question_list, $answer_list);
-            // $answer_list = $this->input->post('answer');
-            echo json_encode($data);
+
+            $insert = [
+                'nama' => $this->input->post('nama'),
+                'nim' => $this->input->post('nim'),
+                'kelas' => $this->input->post('kelas'),
+                'semester' => $this->input->post('semester'),
+                'dataAnswer' => json_encode($data),
+            ];
+
+            $this->Penilaian_model->store($insert);
+            $this->session->set_flashdata('semester', $this->input->post('semester'));
+            return redirect('/Perhitungan');
         }
     }
 ?>

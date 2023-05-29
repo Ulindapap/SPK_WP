@@ -14,35 +14,39 @@
         <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-fw fa-edit"></i> Edit Data Mata Kuliah</h6>
     </div>
 
-    <?php echo form_open('Alternatif/update/'.$alternatif->id_alternatif); ?>
+
     <div class="card-body">
-        <div class="row">
-            <?php echo form_hidden('id_alternatif', $alternatif->id_alternatif) ?>
-            <div class="form-group col-md-12">
-                <label class="font-weight-bold">Nama Mata Kuliah</label>
-                <input autocomplete="off" type="text" name="nama" value="<?php echo $alternatif->nama ?>" required
-                    class="form-control" />
-            </div>
-            <div class="form-group col-md-12">
-                <label for="exampleFormControlInput1" class="form-label">Kelas</label>
-                <select class="form-control" aria-label="Default select example" name="semester" require>
-                    <option value="<?=$alternatif->semester?>">Semester <?=$alternatif->semester?></option>
-                    <option value="1">Semester 1</option>
-                    <option value="2">Semester 2</option>
-                    <option value="3">Semester 3</option>
-                    <option value="4">Semester 4</option>
-                    <option value="5">Semester 5</option>
-                    <option value="6">Semester 6</option>
-                    <option value="7">Semester 7</option>
-                    <option value="8">Semester 8</option>
-            </div>
+        <?php echo form_open('Alternatif/update/'.$alternatif->id_alternatif); ?>
+        <?php echo form_hidden('id_alternatif', $alternatif->id_alternatif) ?>
+        <div class="form-group col-md-12">
+            <label for="#al" class="form-label font-weight-bold">Nama Mata Kuliah</label>
+            <input autocomplete="off" type="text" name="nama" value="<?php echo $alternatif->nama ?>" required
+                class="form-control" id="al" />
         </div>
+        <div class="form-group col-md-12">
+            <label for="#select" class="form-label font-weight-bold">Semester</label>
+            <select class="form-control" aria-label="Default select example" name="semester" required id="select">
+                <option value="<?=$alternatif->semester?>">Semester <?=$alternatif->semester?></option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="#des" class="form-label font-weight-bold">Deskripsi Mata Kuliah</label>
+            <input autocomplete="off" type="text" name="deskripsi" value="<?php echo $alternatif->deskripsi ?>" required
+                class="form-control" id="des" />
+        </div>
+        <div class="card-footer text-right">
+            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Simpan</button>
+            <button type="reset" class="btn btn-info"><i class="fa fa-sync-alt"></i> Reset</button>
+        </div>
+        <?php echo form_close() ?>
     </div>
-    <div class="card-footer text-right">
-        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Simpan</button>
-        <button type="reset" class="btn btn-info"><i class="fa fa-sync-alt"></i> Reset</button>
-    </div>
-    <?php echo form_close() ?>
 </div>
 
 <?php $this->load->view('layouts/footer_admin'); ?>

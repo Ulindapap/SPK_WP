@@ -21,6 +21,7 @@
                     <tr align="center">
                         <th width="5%">No</th>
                         <th>Nama Alternatif</th>
+                        <th>Deskripsi</th>
                         <th>Semester</th>
                         <th width="15%">Aksi</th>
                     </tr>
@@ -33,6 +34,7 @@
                     <tr align="center">
                         <td><?=$no ?></td>
                         <td align="left"><?php echo $value->nama ?></td>
+                        <td align="left"><?php echo $value->deskripsi ?></td>
                         <td align="left"><?php echo $value->semester ?></td>
                         <td>
                             <div class="btn-group" role="group">

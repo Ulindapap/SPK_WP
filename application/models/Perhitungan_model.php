@@ -9,8 +9,9 @@
             $query = $this->db->get('kriteria');
             return $query->result();
         }
-        public function get_alternatif()
+        public function get_alternatif($semester)
         {
+			$this->db->where('semester', $semester);
             $query = $this->db->get('alternatif');
             return $query->result();
         }
@@ -56,5 +57,23 @@
             $query = $this->db->query("TRUNCATE TABLE hasil_wp;");
 			return $query;
         }
-    }
-    
+
+		// kode dibawah setelah direvisi 
+		public function getValue($alternatif, $kriteria) {
+			$this->db->order_by("id_penilaian", "desc");
+			$this->db->limit(1);
+			$penilaian = $this->db->get('penilaian')->row();
+			$data =  json_decode($penilaian->dataAnswer);
+			foreach($data as $question => $value) {
+				$this->db->where('id', $question);
+				$this->db->where('alternatif_id', $alternatif);
+				$this->db->where('kriteria_id', $kriteria);
+				$result = $this->db->get('pertanyaan')->row();
+				if($result) {
+					$this->db->where('id_sub_kriteria', $value);
+					$vw = $this->db->get('sub_kriteria')->row();
+					return $vw->nilai;
+				}
+			}
+		}
+	}

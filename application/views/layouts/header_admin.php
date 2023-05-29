@@ -117,6 +117,11 @@ if($this->session->status !== ('Logged'))
                      <i class="fas fa-fw fa-edit"></i>
                      <span>Penilaian Kuisioner</span></a>
              </li>
+             <li class="nav-item <?php if($page=='Perhitungan'){echo 'active';}?>">
+                 <a class="nav-link" href="<?= base_url('Perhitungan'); ?>">
+                     <i class="fas fa-fw fa-calculator"></i>
+                     <span>Data Perhitungan</span></a>
+             </li>
              <li class="nav-item <?php if($page=='Hasil'){echo 'active';}?>">
                  <a class="nav-link" href="<?= base_url('Perhitungan/hasil'); ?>">
                      <i class="fas fa-fw fa-chart-area"></i>

@@ -10,23 +10,16 @@
             $this->load->library('pagination');
             $this->load->library('form_validation');
             $this->load->model('Perhitungan_model');
+            $this->load->model('Penilaian_model');
         }
 
         public function index()
-        {
-            if ($this->session->userdata('id_user_level') != "1") {
-            ?>
-				<script type="text/javascript">
-                    alert('Anda tidak berhak mengakses halaman ini!');
-                    window.location='<?php echo base_url("Login/home"); ?>'
-                </script>
-            <?php
-			}
-			
+        {	
+            $semester = $this->session->flashdata('semester');
 			$data = [
                 'page' => "Perhitungan",
                 'kriteria'=> $this->Perhitungan_model->get_kriteria(),
-                'alternatif'=> $this->Perhitungan_model->get_alternatif(),
+                'alternatif'=> $this->Perhitungan_model->get_alternatif($semester),
             ];
 			
             $this->load->view('Perhitungan/perhitungan', $data);

@@ -43,10 +43,12 @@ window.location = '<?php echo base_url("Login/home"); ?>'
         {
                 $data = [
                     'nama' => $this->input->post('nama'),
-                    'semester' => $this->input->post('semester')
+                    'deskripsi' => $this->input->post('deskripsi'),
+                    'semester' => $this->input->post('semester'),
                 ];
                 
                 $this->form_validation->set_rules('nama', 'Nama', 'required');               
+                $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');               
                 $this->form_validation->set_rules('semester', 'Semester', 'required');               
     
                 if ($this->form_validation->run() != false) {
