@@ -1,4 +1,8 @@
-<?php $this->load->view('layouts/header_admin'); ?>
+<?php
+
+use Sabberworm\CSS\Value\Value;
+
+ $this->load->view('layouts/header_admin'); ?>
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-chart-area"></i> Data Hasil Akhir</h1>
@@ -9,7 +13,15 @@
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Hasil Akhir Perankingan</h6>
+        <h6 class="m-0 font-weight-bold text-primary mb-3"><i class="fa fa-table"></i> Hasil Akhir Perankingan</h6>
+        <?php 
+        $this->db->where('id_penilaian', $hasil_wp->id_penilaian);
+        $penilaian = $this->db->get('penilaian')->row();
+        ?>
+        <small class="text-dark">Nama : <?=$penilaian->nama?></small><br>
+        <small class="text-dark">NIM : <?=$penilaian->nim?></small><br>
+        <small class="text-dark">Kelas : <?=$penilaian->kelas?></small><br>
+        <small class="text-dark">Semester : <?=$penilaian->semester?></small>
     </div>
 
     <div class="card-body">
@@ -25,26 +37,37 @@
                 </thead>
                 <tbody>
                     <?php
+                    // logic untuk mengambil nilai dan sorting secara desc 
 						$no=1;
-						foreach ($hasil_wp as $keys): ?>
+                        $dataArray = [];
+                        $data = json_decode($hasil_wp->dataAkhir);
+                        foreach($data as $key => $val) {
+                            array_push($dataArray, [$key => $val]);
+                        }
+                        asort($dataArray);
+						foreach ($dataArray as $key => $value): ?>
+                    <?php foreach ($value as $index => $val) :?>
                     <tr align="center">
                         <td align="left">
                             <?php
-							$nama_alternatif = $this->Perhitungan_model->get_hasil_alternatif($keys->id_alternatif);
-							echo $nama_alternatif['nama'];
+                            $this->db->where('id_alternatif', $index);
+                            $alternatif = $this->db->get('alternatif')->row();
+                            echo $alternatif->nama;
 							?>
 
                         </td>
                         <td align="left">
                             <?php
-							$nama_alternatif = $this->Perhitungan_model->get_hasil_alternatif($keys->id_alternatif);
-							echo $nama_alternatif['deskripsi'];
+							$this->db->where('id_alternatif', $index);
+                            $alternatif = $this->db->get('alternatif')->row();
+                            echo $alternatif->deskripsi;
 							?>
 
                         </td>
-                        <td><?= $keys->nilai ?></td>
+                        <td><?= $val ?></td>
                         <td><?= $no; ?></td>
                     </tr>
+                    <?php endforeach ?>
                     <?php
 						$no++;
 						endforeach ?>

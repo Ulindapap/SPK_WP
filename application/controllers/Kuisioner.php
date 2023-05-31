@@ -51,8 +51,7 @@
             ];
 
             $this->Penilaian_model->store($insert);
-            $this->session->set_flashdata('semester', $this->input->post('semester'));
-            return redirect('/Perhitungan');
+            return redirect('/Perhitungan', $penilaian);
         }
     }
 ?>

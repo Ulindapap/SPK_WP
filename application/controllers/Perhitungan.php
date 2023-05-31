@@ -15,11 +15,14 @@
 
         public function index()
         {	
-            $semester = $this->session->flashdata('semester');
+            $this->db->order_by("id_penilaian", "desc");
+			$this->db->limit(1);
+			$penilaian = $this->db->get('penilaian')->row();
 			$data = [
                 'page' => "Perhitungan",
+                'penilaian' => $penilaian,
                 'kriteria'=> $this->Perhitungan_model->get_kriteria(),
-                'alternatif'=> $this->Perhitungan_model->get_alternatif($semester),
+                'alternatif'=> $this->Perhitungan_model->get_alternatif($penilaian->semester),
             ];
 			
             $this->load->view('Perhitungan/perhitungan', $data);
@@ -30,8 +33,7 @@
             $data = [
                 'page' => "Hasil",
 				'hasil_wp'=> $this->Perhitungan_model->get_hasil_wp()
-            ];
-			
+            ];			
             $this->load->view('Perhitungan/hasil', $data);
         }
     

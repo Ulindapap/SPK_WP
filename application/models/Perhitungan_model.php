@@ -36,8 +36,8 @@
 		
 		public function get_hasil_wp()
         {
-			$query = $this->db->query("SELECT * FROM hasil_wp ORDER BY nilai DESC;");
-            return $query->result();
+			$query = $this->db->query("SELECT * FROM hasil_wp ORDER BY id_hasil_wp DESC;");
+            return $query->row();
         }
 		
 		public function get_hasil_alternatif($id_alternatif)
@@ -50,12 +50,6 @@
         {
             $result = $this->db->insert('hasil_wp', $hasil_akhir);
             return $result;
-        }
-		
-		public function hapus_hasil_wp()
-        {
-            $query = $this->db->query("TRUNCATE TABLE hasil_wp;");
-			return $query;
         }
 
 		// kode dibawah setelah direvisi 

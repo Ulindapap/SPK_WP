@@ -208,8 +208,10 @@
                 </thead>
                 <tbody>
                     <?php 
-						$this->Perhitungan_model->hapus_hasil_wp();
 						$no=1;
+                        $getAlternatif = [];
+                        $nilai = [];
+                        $dataV = [];
 						foreach ($alternatif as $keys): ?>
                     <tr align="center">
                         <td><?= $no; ?></td>
@@ -234,14 +236,20 @@
                         <td><?php echo $nilai_v = $total_s/$total_vs; ?></td>
                     </tr>
                     <?php
-						$hasil_akhir = [
-							'id_alternatif' => $keys->id_alternatif,
-							'nilai' => $nilai_v
-						];
-						$this->Perhitungan_model->insert_hasil_wp($hasil_akhir);
+                        array_push($getAlternatif, $keys->id_alternatif);
+                        array_push($nilai, $nilai_v);
+                        $dataV= array_combine($getAlternatif, $nilai);
 						$no++;
 						endforeach;
 					?>
+
+                    <?php 
+                    $dataAkhir = [
+                        'id_penilaian' => $penilaian->id_penilaian,
+                        'dataAkhir' => json_encode($dataV)
+                    ];
+						$this->Perhitungan_model->insert_hasil_wp($dataAkhir);
+                    ?>
                 </tbody>
             </table>
         </div>
