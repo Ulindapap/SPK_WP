@@ -11,45 +11,44 @@
     </div>
 
     <div class="card-body">
-		<div class="table-responsive">
-			<table class="table table-bordered" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
-					<tr align="center">
-						<th width="5%" rowspan="2">No</th>
-						<th rowspan="2">Nama Mata Kuliah</th>
-						<?php $total_kriteria = $this->Perhitungan_model->total_kriteria(); ?>
-						<th colspan="<?= $total_kriteria['total_kriteria']; ?>">Kriteria</th>
-					</tr>
-					<tr align="center">
-						<?php foreach ($kriteria as $key): ?>
-						<th><?= $key->kode_kriteria ?></th>
-						<?php endforeach ?>
-					</tr>
-				</thead>
-				<tbody>
-					<?php 
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead class="bg-primary text-white">
+                    <tr align="center">
+                        <th width="5%" rowspan="2">No</th>
+                        <th rowspan="2">Nama Mata Kuliah</th>
+                        <?php $total_kriteria = $this->Perhitungan_model->total_kriteria(); ?>
+                        <th colspan="<?= $total_kriteria['total_kriteria']; ?>">Kriteria</th>
+                    </tr>
+                    <tr align="center">
+                        <?php foreach ($kriteria as $key): ?>
+                        <th><?= $key->kode_kriteria ?></th>
+                        <?php endforeach ?>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
 						$no=1;
 						foreach ($alternatif as $keys): ?>
-					<tr align="center">
-						<td><?= $no; ?></td>
-						<td align="left"><?= $keys->nama ?></td>
-						<?php foreach ($kriteria as $key): ?>
-						<td>
-						<?php 
-							$data_pencocokan = $this->Perhitungan_model->data_nilai($keys->id_alternatif,$key->id_kriteria);
-							echo $data_pencocokan['nilai'];
-						?>
-						</td>
-						<?php endforeach ?>
-					</tr>
-					<?php
+                    <tr align="center">
+                        <td><?= $no; ?></td>
+                        <td align="left"><?= $keys->nama ?></td>
+                        <?php foreach ($kriteria as $key): ?>
+                        <td>
+                            <?php 
+							echo $this->Perhitungan_model->getValue($keys->id_alternatif, $key->id_kriteria);
+							?>
+                        </td>
+                        <?php endforeach ?>
+                    </tr>
+                    <?php
 						$no++;
 						endforeach
 					?>
-				</tbody>
-			</table>
-		</div>
-	</div>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <div class="card shadow mb-4">
@@ -59,29 +58,29 @@
     </div>
 
     <div class="card-body">
-		<div class="table-responsive">
-			<table class="table table-bordered" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
-					<tr align="center">
-						<?php foreach ($kriteria as $key): ?>
-						<th><?= $key->kode_kriteria ?> (<?= $key->jenis ?>)</th>
-						<?php endforeach ?>
-					</tr>
-				</thead>
-				<tbody>
-					<tr align="center">
-						<?php foreach ($kriteria as $key): ?>
-						<td>
-						<?php 
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead class="bg-primary text-white">
+                    <tr align="center">
+                        <?php foreach ($kriteria as $key): ?>
+                        <th><?= $key->kode_kriteria ?> (<?= $key->jenis ?>)</th>
+                        <?php endforeach ?>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="center">
+                        <?php foreach ($kriteria as $key): ?>
+                        <td>
+                            <?php 
 						echo $key->bobot;
 						?>
-						</td>
-						<?php endforeach ?>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+                        </td>
+                        <?php endforeach ?>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 
@@ -92,36 +91,36 @@
     </div>
 
     <div class="card-body">
-		<div class="table-responsive">
-			<table class="table table-bordered" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
-					<tr align="center">
-						<?php foreach ($kriteria as $key): ?>
-						<th><?= $key->kode_kriteria ?> (<?= $key->jenis ?>)</th>
-						<?php endforeach ?>
-					</tr>
-				</thead>
-				<tbody>
-					<tr align="center">
-						<?php 
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead class="bg-primary text-white">
+                    <tr align="center">
+                        <?php foreach ($kriteria as $key): ?>
+                        <th><?= $key->kode_kriteria ?> (<?= $key->jenis ?>)</th>
+                        <?php endforeach ?>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="center">
+                        <?php 
 						foreach ($kriteria as $key):
 						$total_bobot=$this->Perhitungan_model->get_total_kriteria();
 						?>
-						<td>
-						<?php 
+                        <td>
+                            <?php 
 							if ($key->jenis == "Benefit") {
 								echo @(($key->bobot/$total_bobot['total_bobot'])*1);
 							}else {
 								echo @(($key->bobot/$total_bobot['total_bobot'])*-1);
 							}
 						?>
-						</td>
-						<?php endforeach ?>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+                        </td>
+                        <?php endforeach ?>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <div class="card shadow mb-4">
@@ -131,63 +130,63 @@
     </div>
 
     <div class="card-body">
-		<div class="table-responsive">
-			<table class="table table-bordered" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
-					<tr align="center">
-						<th width="5%" rowspan="2">No</th>
-						<th rowspan="2">Nama Alternatif</th>
-						<th colspan="<?= $total_kriteria['total_kriteria']; ?>">Kriteria</th>
-						<th rowspan="2" width="15%">Nilai (S)</th>
-					</tr>
-					<tr align="center">
-						<?php foreach ($kriteria as $key): ?>
-						<th><?= $key->kode_kriteria ?></th>
-						<?php endforeach ?>
-						
-					</tr>
-				</thead>
-				<tbody>
-					<?php 
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead class="bg-primary text-white">
+                    <tr align="center">
+                        <th width="5%" rowspan="2">No</th>
+                        <th rowspan="2">Nama Alternatif</th>
+                        <th colspan="<?= $total_kriteria['total_kriteria']; ?>">Kriteria</th>
+                        <th rowspan="2" width="15%">Nilai (S)</th>
+                    </tr>
+                    <tr align="center">
+                        <?php foreach ($kriteria as $key): ?>
+                        <th><?= $key->kode_kriteria ?></th>
+                        <?php endforeach ?>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
 						$no=1;
 						$total_vs = 0;
 						foreach ($alternatif as $keys): ?>
-					<tr align="center">
-						<td><?= $no; ?></td>
-						<td align="left"><?= $keys->nama ?></td>
-						<?php 
+                    <tr align="center">
+                        <td><?= $no; ?></td>
+                        <td align="left"><?= $keys->nama ?></td>
+                        <?php 
 						$total_s = 1;
 						foreach ($kriteria as $key): ?>
-						<td>
-						<?php 
-							$data_pencocokan = $this->Perhitungan_model->data_nilai($keys->id_alternatif,$key->id_kriteria);
+                        <td>
+                            <?php 
+							$data_pencocokan = $this->Perhitungan_model->getValue($keys->id_alternatif,$key->id_kriteria);
 							$total_bobot=$this->Perhitungan_model->get_total_kriteria();
 							if ($key->jenis == "Benefit") {
 								$bobot_r = @(($key->bobot/$total_bobot['total_bobot'])*1);
-								echo $nilai_s = pow($data_pencocokan['nilai'],$bobot_r);
+								echo $nilai_s = pow($data_pencocokan,$bobot_r);
 							}else {
 								$bobot_r = @(($key->bobot/$total_bobot['total_bobot'])*-1);
-								echo $nilai_s = pow($data_pencocokan['nilai'],$bobot_r);
+								echo $nilai_s = pow($data_pencocokan,$bobot_r);
 							}
 							$total_s *= $nilai_s;
 						?>
-						</td>
-						<?php endforeach; ?>
-						<td><?= $total_s; ?></td>
-					</tr>
-					<?php
+                        </td>
+                        <?php endforeach; ?>
+                        <td><?= $total_s; ?></td>
+                    </tr>
+                    <?php
 						$total_vs += $total_s;
 						$no++;
 						endforeach;
 					?>
-					<tr align="center">
-						<td colspan="<?= $total_kriteria['total_kriteria']+2; ?>" class="bg-light">Total</td>
-						<td class="bg-light"><?= $total_vs;?></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+                    <tr align="center">
+                        <td colspan="<?= $total_kriteria['total_kriteria']+2; ?>" class="bg-light">Total</td>
+                        <td class="bg-light"><?= $total_vs;?></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <div class="card shadow mb-4">
@@ -197,56 +196,64 @@
     </div>
 
     <div class="card-body">
-		<div class="table-responsive">
-			<table class="table table-bordered" width="100%" cellspacing="0">
-				<thead class="bg-primary text-white">
-					<tr align="center">
-						<th width="5%">No</th>
-						<th>Nama Mata Kuliah</th>
-						<th>Perhitungan</th>
-						<th width="15%">Nilai (V)</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php 
-						$this->Perhitungan_model->hapus_hasil_wp();
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead class="bg-primary text-white">
+                    <tr align="center">
+                        <th width="5%">No</th>
+                        <th>Nama Mata Kuliah</th>
+                        <th>Perhitungan</th>
+                        <th width="15%">Nilai (V)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
 						$no=1;
+                        $getAlternatif = [];
+                        $nilai = [];
+                        $dataV = [];
 						foreach ($alternatif as $keys): ?>
-					<tr align="center">
-						<td><?= $no; ?></td>
-						<td align="left"><?= $keys->nama ?></td>
-						<?php 
+                    <tr align="center">
+                        <td><?= $no; ?></td>
+                        <td align="left"><?= $keys->nama ?></td>
+                        <?php 
 						$total_s = 1;
 						foreach ($kriteria as $key): ?>
-						<?php 
-							$data_pencocokan = $this->Perhitungan_model->data_nilai($keys->id_alternatif,$key->id_kriteria);
+                        <?php 
+							$data_pencocokan = $this->Perhitungan_model->getValue($keys->id_alternatif,$key->id_kriteria);
 							$total_bobot=$this->Perhitungan_model->get_total_kriteria();
 							if ($key->jenis == "Benefit") {
 								$bobot_r = @(($key->bobot/$total_bobot['total_bobot'])*1);
-								$nilai_s = pow($data_pencocokan['nilai'],$bobot_r);
+								$nilai_s = pow($data_pencocokan,$bobot_r);
 							}else {
 								$bobot_r = @(($key->bobot/$total_bobot['total_bobot'])*-1);
-								$nilai_s = pow($data_pencocokan['nilai'],$bobot_r);
+								$nilai_s = pow($data_pencocokan,$bobot_r);
 							}
 							$total_s *= $nilai_s;
 						?>
-						<?php endforeach; ?>
-						<td><?=$total_s; ?> / <?=$total_vs; ?></td>
-						<td><?php echo $nilai_v = $total_s/$total_vs; ?></td>
-					</tr>
-					<?php
-						$hasil_akhir = [
-							'id_alternatif' => $keys->id_alternatif,
-							'nilai' => $nilai_v
-						];
-						$this->Perhitungan_model->insert_hasil_wp($hasil_akhir);
+                        <?php endforeach; ?>
+                        <td><?=$total_s; ?> / <?=$total_vs; ?></td>
+                        <td><?php echo $nilai_v = $total_s/$total_vs; ?></td>
+                    </tr>
+                    <?php
+                        array_push($getAlternatif, $keys->id_alternatif);
+                        array_push($nilai, $nilai_v);
+                        $dataV= array_combine($getAlternatif, $nilai);
 						$no++;
 						endforeach;
 					?>
-				</tbody>
-			</table>
-		</div>
-	</div>
+
+                    <?php 
+                    $dataAkhir = [
+                        'id_penilaian' => $penilaian->id_penilaian,
+                        'dataAkhir' => json_encode($dataV)
+                    ];
+						$this->Perhitungan_model->insert_hasil_wp($dataAkhir);
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 <?php

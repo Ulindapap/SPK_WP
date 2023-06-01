@@ -10,23 +10,19 @@
             $this->load->library('pagination');
             $this->load->library('form_validation');
             $this->load->model('Perhitungan_model');
+            $this->load->model('Penilaian_model');
         }
 
         public function index()
-        {
-            if ($this->session->userdata('id_user_level') != "1") {
-            ?>
-				<script type="text/javascript">
-                    alert('Anda tidak berhak mengakses halaman ini!');
-                    window.location='<?php echo base_url("Login/home"); ?>'
-                </script>
-            <?php
-			}
-			
+        {	
+            $this->db->order_by("id_penilaian", "desc");
+			$this->db->limit(1);
+			$penilaian = $this->db->get('penilaian')->row();
 			$data = [
                 'page' => "Perhitungan",
+                'penilaian' => $penilaian,
                 'kriteria'=> $this->Perhitungan_model->get_kriteria(),
-                'alternatif'=> $this->Perhitungan_model->get_alternatif(),
+                'alternatif'=> $this->Perhitungan_model->get_alternatif($penilaian->semester),
             ];
 			
             $this->load->view('Perhitungan/perhitungan', $data);
@@ -37,8 +33,7 @@
             $data = [
                 'page' => "Hasil",
 				'hasil_wp'=> $this->Perhitungan_model->get_hasil_wp()
-            ];
-			
+            ];			
             $this->load->view('Perhitungan/hasil', $data);
         }
     

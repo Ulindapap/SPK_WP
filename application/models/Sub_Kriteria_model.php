@@ -62,6 +62,11 @@
 			$query = $this->db->query("SELECT * FROM sub_kriteria WHERE id_kriteria='$id_kriteria'  ORDER BY nilai DESC;");
 			return $query->result_array();
 		}
+
+        public function getKriterisId($id) {
+            $this->db->where('id_kriteria', $id);
+            return $this->db->get('sub_kriteria')->result();
+        }
     }
     
     /* End of file Kategori_model.php */

@@ -9,7 +9,6 @@
             $query = $this->db->get('penilaian');
             return $query->result();
         }
-
       
         public function tambah_penilaian($id_alternatif,$id_kriteria,$id_sub_kriteria)
         {
@@ -67,6 +66,11 @@
 			$query = $this->db->query("SELECT * FROM penilaian JOIN sub_kriteria WHERE penilaian.id_sub_kriteria=sub_kriteria.id_sub_kriteria AND penilaian.id_alternatif='$id_alternatif' AND penilaian.id_kriteria='$id_kriteria';");
 			return $query->row_array();
 		}
+
+        // kode baru proses revisi
+        public function store($data) {
+            $this->db->insert('penilaian', $data);
+        }
     
     }
     
