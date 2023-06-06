@@ -20,7 +20,7 @@
                 <thead class="bg-primary text-white">
                     <tr align="center">
                         <th width="5%">No</th>
-                        <th>Nama Alternatif</th>
+                        <th>Mata Kuliah</th>
                         <th>Deskripsi</th>
                         <th>Semester</th>
                         <th width="15%">Aksi</th>

@@ -26,21 +26,20 @@ $this->load->view('layouts/header_admin');
         <div class="row mb-3">
             <div class="col">
                 <label for="exampleFormControlInput1" class="form-label">Kelas</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Kelas"
-                    aria-label="Username" aria-describedby="basic-addon1" name="kelas" required>
+                <select class="form-control" aria-label="Default select example" name="kelas" id="kelas" required>
+                    <option value="">Kelas</option>
+                    <option value="DKV-03-A">DKV-03-A</option>
+                    <option value="DKV-03-B">DKV-03-B</option>
+                    <option value="DKV-03-C">DKV-03-C</option>
+                    <option value="DKV-03-D">DKV-03-D</option>
+                </select>
             </div>
             <div class="col">
-                <label for="exampleFormControlInput1" class="form-label">Kelas</label>
+                <label for="exampleFormControlInput1" class="form-label">Semester</label>
                 <select class="form-control" aria-label="Default select example" name="semester" id="semester" required>
                     <option value="">Pilih Semester</option>
-                    <option value="1">Semester 1</option>
-                    <option value="2">Semester 2</option>
-                    <option value="3">Semester 3</option>
-                    <option value="4">Semester 4</option>
-                    <option value="5">Semester 5</option>
                     <option value="6">Semester 6</option>
                     <option value="7">Semester 7</option>
-                    <option value="8">Semester 8</option>
                 </select>
             </div>
         </div>
