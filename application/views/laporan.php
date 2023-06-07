@@ -19,6 +19,14 @@ td {
 <body>
 
     <h4>Hasil Akhir Perankingan</h4>
+    <?php 
+        $this->db->where('id_penilaian', $hasil_wp->id_penilaian);
+        $penilaian = $this->db->get('penilaian')->row();
+        ?>
+    <small class="text-dark">Nama : <?=$penilaian->nama?></small><br>
+    <small class="text-dark">NIM : <?=$penilaian->nim?></small><br>
+    <small class="text-dark">Kelas : <?=$penilaian->kelas?></small><br>
+    <small class="text-dark">Semester : <?=$penilaian->semester?></small><br>
     <table border="1" width="100%">
         <thead>
             <tr align="center">
