@@ -28,15 +28,15 @@
             return $query->row();
         }
 
-        public function update($id_alternatif, $data = [])
-        {
-            $ubah = array(
-                'nama'  => $data['nama']
-            );
+        // public function update($id_alternatif, $data = [])
+        // {
+        //     $ubah = array(
+        //         'nama'  => $data['nama']
+        //     );
 
-            $this->db->where('id_alternatif', $id_alternatif);
-            $this->db->update('alternatif', $ubah);
-        }
+        //     $this->db->where('id_alternatif', $id_alternatif);
+        //     $this->db->update('alternatif', $ubah);
+        // }
 
 
         public function delete($id_alternatif)

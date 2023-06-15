@@ -16,8 +16,8 @@
 
 
     <div class="card-body">
-        <?php echo form_open('Alternatif/update/'.$alternatif->id_alternatif); ?>
-        <?php echo form_hidden('id_alternatif', $alternatif->id_alternatif) ?>
+        <?php echo form_open('Alternatif/update'); ?>
+        <input type="hidden" name="id" value="<?=$alternatif->id_alternatif?>">
         <div class="form-group col-md-12">
             <label for="#al" class="form-label font-weight-bold">Nama Mata Kuliah</label>
             <input autocomplete="off" type="text" name="nama" value="<?php echo $alternatif->nama ?>" required
