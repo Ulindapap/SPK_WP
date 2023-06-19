@@ -19,7 +19,8 @@
     <?php echo form_open('Pertanyaan/update'); ?>
     <div class="card-body">
         <div class="row">
-            <input type="text" id="id" value="<?=$pertanyaan->id?>" hidden>
+            <input type="text" name="id" value="<?=$pertanyaan->id?>" hidden>
+            <input type="text" name="semester" value="<?=$pertanyaan->semester?>" hidden>
             <div class="form-group col-md-6">
                 <label class="font-weight-bold">Pertanyan</label>
                 <input autocomplete="off" type="text" name="pertanyaan" required class="form-control"
