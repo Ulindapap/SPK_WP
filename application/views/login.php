@@ -7,7 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
 
-        <title>Sistem Pendukung Keputusan Metode WP</title>
+        <title>Sistem Pendukung Keputusan Mata kuliah Pilihan Program Studi Desain Komunikasi Visual</title>
 
         <!-- Custom fonts for this template-->
         <link href="<?= base_url('assets/')?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
@@ -22,7 +22,7 @@
     <body class="bg-gradient-primary">
         <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-lg pb-3 pt-3 font-weight-bold">
             <div class="container">
-                <a class="navbar-brand text-primary" style="font-weight: 900;" href="<?= base_url('')?>"> <i class="fa fa-database mr-2 rotate-n-15"></i> Sistem Pendukung Keputusan Metode WP</a>
+                <a class="navbar-brand text-primary" style="font-weight: 900;" href="<?= base_url('')?>"> <i class="fa fa-database mr-2 rotate-n-15"></i> Sistem Pendukung Keputusan Mata kuliah Pilihan Program Studi Desain Komunikasi Visual</a>
             </div>
         </nav>
 
@@ -32,12 +32,12 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 mt-5">
                     <div class="card bg-none o-hidden border-0 my-5 text-white" style="background: none;">
                         <div class="text-justify card-body p-0">
-                            <h4 style="font-weight: 800;">Sistem Pendukung Keputusan Metode WP</h4>
+                            <h4 style="font-weight: 800;">Sistem Pendukung Keputusan Mata kuliah Pilihan Program Studi Desain Komunikasi Visual</h4>
                             <p class="pt-4">
                                 Sistem Pendukung Keputusan (SPK) merupakan suatu sistem informasi spesifik yang ditujukan untuk membantu manajemen dalam mengambil keputusan yang berkaitan dengan persoalan yang bersifat semi terstruktur.
                             </p>
                             <p>
-                                Metode Weighted Product (WP) adalah salah satu metode yang digunakan untuk penyelesaian sistem pengambilan keputusan dengan mempertimbangkan kriteria dan bobot. Metode WP merupakan salah satu dari beberapa metode Multi Atribute Decision Making (MADM) dimana pengambilan keputusan didasarkan pada beberapa atribut.
+                                Program Studi Desain Komunikasi Visual menyedian mata kuliah pilihan bagi mahasiswa pada semester 6 dan 7. mata kuliah pilihan tersebut dapat dipilih berdasarkan minat mahasiswa yang dapat digunakan sebagai penunjang tugas akhir mahasiswa
                             </p>
                         </div>
                     </div>
