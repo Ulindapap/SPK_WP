@@ -61,7 +61,7 @@ td {
                         foreach($data as $key => $val) {
                             array_push($dataArray, [$key => $val]);
                         }
-                        asort($dataArray);
+                        arsort($dataArray);
 						foreach ($dataArray as $key => $value): ?>
             <?php foreach ($value as $index => $val) :?>
             <tr align="center">

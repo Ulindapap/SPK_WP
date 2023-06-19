@@ -71,11 +71,19 @@
             $data = array(
                 'pertanyaan' => $this->input->post('pertanyaan'),
                 'alternatif_id' => $this->input->post('alternatif_id'),
+                'semester' => $this->input->post('semester'),
                 'kriteria_id' => $this->input->post('kriteria_id'),
             );
 
-            $this->Pertanyaan_model->update($id, $data);
+            // $this->Pertanyaan_model->update($id, $data);
+            $this->db->where('id', $id);
+            $this->db->update('pertanyaan', $data);
 			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil diupdate!</div>');
+            redirect('Pertanyaan');
+        }
+        
+        public function destroy($id) {
+            $this->Pertanyaan_model->destroy($id);
             redirect('Pertanyaan');
         }
     }

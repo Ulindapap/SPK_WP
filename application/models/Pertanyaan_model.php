@@ -21,16 +21,10 @@
             return $result;
         }
 
-        public function update($id, $data=[]) {
-            $ubah = array(
-                'pertanyaan'  => $data['pertanyaan'],
-                'alternatif_id'  => $data['alternatif_id'],
-                'kriteria_id'  => $data['kriteria_id'],
-            );
-
-            $this->db->where('id', $id);
-            $this->db->update('pertanyaan', $ubah);
-        }
+        // public function update($id, $data) {
+        //     $this->db->where('id', $id);
+        //     return $this->db->update('pertanyaan', $data);
+        // }
 
         public function getAlternatif($id_alternatif, $alternatif_id) {
             $result = $this->db->query("SELECT * FROM Alternatif JOIN Pertanyaan WHERE Alternatif.id_alternatif = Pertanyaan.alternatif_id AND Alternatif.id_alternatif = '$id_alternatif' AND Pertanyaan.alternatif_id = '$alternatif_id';");
@@ -45,6 +39,11 @@
             $this->db->where('semester', $data);
             $result = $this->db->get('pertanyaan')->result();
             return $result; 
+        }
+
+        public function destroy($id) {
+            $this->db->where('id', $id);
+            return $this->db->delete('pertanyaan');
         }
     }
 ?>

@@ -76,15 +76,18 @@ window.location = '<?php echo base_url("Login/home"); ?>'
             $this->load->view('alternatif/edit', $data);
         }
     
-        public function update($id_alternatif)
+        public function update()
         {
-            $id_alternatif = $this->input->post('id_alternatif');
+            $id_alternatif = $this->input->post('id');
             $data = array(
                 'nama' => $this->input->post('nama'),
+                'deskripsi' => $this->input->post('deskripsi'),
                 'semester' => $this->input->post('semester')
             );
 
-            $this->Alternatif_model->update($id_alternatif, $data);
+            // $this->Alternatif_model->update($id_alternatif, $data);
+            $this->db->where('id_alternatif', $id_alternatif);
+            $this->db->update('alternatif', $data);
 			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil diupdate!</div>');
             redirect('alternatif');
         }
