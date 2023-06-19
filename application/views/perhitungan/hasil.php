@@ -42,12 +42,10 @@ use Sabberworm\CSS\Value\Value;
                         $dataArray = [];
                         $data = json_decode($hasil_wp->dataAkhir);
                         foreach($data as $key => $val) {
-                            array_push($dataArray, [$key => $val]);
+                            $dataArray[$key] = $val;
                         }
-                        asort($dataArray);
-						foreach ($dataArray as $key => $value): ?>
-                    <?php foreach ($value as $index => $val) :?>
-
+                        arsort($dataArray);
+						foreach ($dataArray as $index => $value): ?>
                     <tr align="center">
                         <td align="left">
                             <?php
@@ -65,13 +63,10 @@ use Sabberworm\CSS\Value\Value;
 							?>
 
                         </td>
-                        <td><?= $val ?></td>
+                        <td><?= $value ?></td>
                         <td><?= $no; ?></td>
                     </tr>
-                    <?php endforeach ?>
-                    <?php
-						$no++;
-						endforeach ?>
+                    <?php $no++; endforeach ?>
                 </tbody>
             </table>
         </div>

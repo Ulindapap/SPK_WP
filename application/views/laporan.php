@@ -39,8 +39,6 @@ td {
             <!-- <?php
 			$no=1;
 			foreach ($hasil_wp as $keys): ?>
-		<tr align="center">
-			<td align="left">
 				<?php
 				$nama_alternatif = $this->Perhitungan_model->get_hasil_alternatif($keys->id_alternatif);
 				echo $nama_alternatif['nama'];
@@ -59,11 +57,10 @@ td {
                         $dataArray = [];
                         $data = json_decode($hasil_wp->dataAkhir);
                         foreach($data as $key => $val) {
-                            array_push($dataArray, [$key => $val]);
+                            $dataArray[$key] = $val;
                         }
                         arsort($dataArray);
-						foreach ($dataArray as $key => $value): ?>
-            <?php foreach ($value as $index => $val) :?>
+						foreach ($dataArray as $index => $value): ?>
             <tr align="center">
                 <td align="left">
                     <?php
@@ -73,13 +70,10 @@ td {
 							?>
 
                 </td>
-                <td><?= $val ?></td>
+                <td><?= $value ?></td>
                 <td><?= $no; ?></td>
             </tr>
-            <?php endforeach ?>
-            <?php
-						$no++;
-						endforeach ?>
+            <?php $no++; endforeach ?>
         </tbody>
     </table>
     <script>
