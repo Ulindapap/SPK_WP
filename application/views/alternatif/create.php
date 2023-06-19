@@ -33,17 +33,11 @@
             </div>
             <div class="col">
                 <div class="form-group col-md-12">
-                    <label for="exampleFormControlInput1" class="form-label">Kelas</label>
+                    <label for="exampleFormControlInput1" class="form-label">Semester</label>
                     <select class="form-control" aria-label="Default select example" name="semester" require>
                         <option value="">Pilih Semester</option>
-                        <option value="1">Semester 1</option>
-                        <option value="2">Semester 2</option>
-                        <option value="3">Semester 3</option>
-                        <option value="4">Semester 4</option>
-                        <option value="5">Semester 5</option>
                         <option value="6">Semester 6</option>
                         <option value="7">Semester 7</option>
-                        <option value="8">Semester 8</option>
                     </select>
                 </div>
             </div>
