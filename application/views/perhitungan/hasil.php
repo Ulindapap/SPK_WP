@@ -44,9 +44,10 @@ use Sabberworm\CSS\Value\Value;
                         foreach($data as $key => $val) {
                             array_push($dataArray, [$key => $val]);
                         }
-                        arsort($dataArray);
+                        asort($dataArray);
 						foreach ($dataArray as $key => $value): ?>
                     <?php foreach ($value as $index => $val) :?>
+
                     <tr align="center">
                         <td align="left">
                             <?php
