@@ -34,7 +34,7 @@ $this->load->view('layouts/header_admin');
                 <?php foreach($subKriteria as $sub) :?>
                 <fieldset id="<?=$q->id?>">
                     <input class="form-check-input" type="radio" name="<?=$q->id?>" id="flexRadioDefault1"
-                        value="<?=$sub->id_sub_kriteria?>">
+                        value="<?=$sub->id_sub_kriteria?>" required>
                     <label class="form-check-label" for="flexRadioDefault1">
                         <?=$sub->deskripsi?>
                     </label>
