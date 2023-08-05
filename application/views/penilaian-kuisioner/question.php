@@ -7,7 +7,7 @@ $this->load->view('layouts/header_admin');
 
 <div class="card">
     <div class="card-header">
-        <h6 class="font-weight-bold mb-0 text-primary mb-3"><i class="fas fa-fw fa-edit"></i>Kuisioner</h6>
+        <h6 class="font-weight-bold mb-0 text-danger mb-3"><i class="fas fa-fw fa-edit"></i>Kuisioner</h6>
         <p class="text-dark">Biodata</p>
         <small class="text-dark">Nama : <?=$value['nama']?></small><br>
         <small class="text-dark">NIM : <?=$value['nim']?></small><br>
@@ -49,7 +49,7 @@ $this->load->view('layouts/header_admin');
         <?php endforeach ?>
 
         <a href="<?=base_url();?>Kuisioner" class="btn btn-secondary">Kembali</a>
-        <button type="submit" class="btn btn-primary px-4">Kirim</button>
+        <button type="submit" class="btn btn-danger px-4">Kirim</button>
         <?php echo form_close() ?>
     </div>
 </div>

@@ -7,13 +7,13 @@
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Matrix Keputusan (X)</h6>
+        <h6 class="m-0 font-weight-bold text-danger"><i class="fa fa-table"></i> Matrix Keputusan (X)</h6>
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-primary text-white">
+                <thead class="bg-danger text-white">
                     <tr align="center">
                         <th width="5%" rowspan="2">No</th>
                         <th rowspan="2">Nama Mata Kuliah</th>
@@ -54,13 +54,13 @@
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Bobot Kriteria (W)</h6>
+        <h6 class="m-0 font-weight-bold text-danger"><i class="fa fa-table"></i> Bobot Kriteria (W)</h6>
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-primary text-white">
+                <thead class="bg-danger text-white">
                     <tr align="center">
                         <?php foreach ($kriteria as $key): ?>
                         <th><?= $key->kode_kriteria ?> (<?= $key->jenis ?>)</th>
@@ -87,13 +87,13 @@
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Normalisasi Bobot Kriteria (W)</h6>
+        <h6 class="m-0 font-weight-bold text-danger"><i class="fa fa-table"></i> Normalisasi Bobot Kriteria (W)</h6>
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-primary text-white">
+                <thead class="bg-danger text-white">
                     <tr align="center">
                         <?php foreach ($kriteria as $key): ?>
                         <th><?= $key->kode_kriteria ?> (<?= $key->jenis ?>)</th>
@@ -126,13 +126,13 @@
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Nilai Vektor (S)</h6>
+        <h6 class="m-0 font-weight-bold text-danger"><i class="fa fa-table"></i> Nilai Vektor (S)</h6>
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-primary text-white">
+                <thead class="bg-danger text-white">
                     <tr align="center">
                         <th width="5%" rowspan="2">No</th>
                         <th rowspan="2">Nama Alternatif</th>
@@ -192,13 +192,13 @@
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Nilai Vektor (V)</h6>
+        <h6 class="m-0 font-weight-bold text-danger"><i class="fa fa-table"></i> Nilai Vektor (V)</h6>
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" width="100%" cellspacing="0">
-                <thead class="bg-primary text-white">
+                <thead class="bg-danger text-white">
                     <tr align="center">
                         <th width="5%">No</th>
                         <th>Nama Mata Kuliah</th>
