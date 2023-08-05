@@ -9,13 +9,13 @@
 <div class="card shadow mb-4">
     <!-- /.card-header -->
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary"><i class="fa fa-table"></i> Daftar Data Penilaian</h6>
+        <h6 class="m-0 font-weight-bold text-danger"><i class="fa fa-table"></i> Daftar Data Penilaian</h6>
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead class="bg-primary text-white">
+                <thead class="bg-danger text-white">
                     <tr align="center">
                         <th width="5%">No</th>
                         <th>Nama</th>
