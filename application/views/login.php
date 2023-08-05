@@ -25,11 +25,11 @@
 <body class="bg-gradient-danger">
     <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-lg pb-3 pt-3 font-weight-bold">
         <div class="container">
-            <a class="navbar-brand text-danger" style="font-weight: 900;" href="<?= base_url('')?>"> <i
-                    class="fa fa-database mr-2 rotate-n-15"></i> Sistem Pendukung Keputusan Mata kuliah Pilihan Program
+            <a class="navbar-brand text-dark" style="font-weight: 900;" href="<?= base_url('')?>"> 
+            <img src="<?=base_url('assets/')?>img/logo.png" alt="" width="80px"> Sistem Pendukung Keputusan Mata kuliah Pilihan Program
                 Studi Desain Komunikasi Visual</a>
         </div>
-    </nav>
+    </nav> 
 
     <div class="container">
         <!-- Outer Row -->

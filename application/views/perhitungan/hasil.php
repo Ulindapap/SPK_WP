@@ -7,7 +7,7 @@ use Sabberworm\CSS\Value\Value;
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-fw fa-chart-area"></i> Data Hasil Akhir</h1>
 
-    <a href="<?= base_url('Laporan'); ?>" class="btn btn-danger"> <i class="fa fa-print"></i> Cetak Data </a>
+    <a href="<?= base_url('Laporan'); ?>" class="btn btn-secondary"> <i class="fa fa-print"></i> Cetak Data </a>
 </div>
 
 <div class="card shadow mb-4">

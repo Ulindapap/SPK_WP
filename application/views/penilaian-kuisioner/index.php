@@ -7,7 +7,7 @@ $this->load->view('layouts/header_admin');
 
 <div class="card">
     <div class="card-header">
-        <h6 class="font-weight-bold mb-0 text-danger"><i class="fas fa-fw fa-edit"></i>Biodata</h6>
+        <h6 class="font-weight-bold mb-0 text-Dark"><i class="fas fa-fw fa-edit"></i>Biodata</h6>
     </div>
     <div class="card-body">
         <?php echo form_open('Kuisioner/question') ?>
@@ -43,7 +43,7 @@ $this->load->view('layouts/header_admin');
                 </select>
             </div>
         </div>
-        <button type="submit" class="btn btn-danger px-4">Lanjut</button>
+        <button type="submit" class="btn btn-primary px-4">Lanjut</button>
         <?php echo form_close() ?>
     </div>
 </div>

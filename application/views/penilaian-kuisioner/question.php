@@ -49,7 +49,7 @@ $this->load->view('layouts/header_admin');
         <?php endforeach ?>
 
         <a href="<?=base_url();?>Kuisioner" class="btn btn-secondary">Kembali</a>
-        <button type="submit" class="btn btn-danger px-4">Kirim</button>
+        <button type="submit" class="btn btn-primary px-4">Kirim</button>
         <?php echo form_close() ?>
     </div>
 </div>
