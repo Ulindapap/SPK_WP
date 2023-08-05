@@ -25,7 +25,7 @@ if($this->session->status !== ('Logged'))
          rel="stylesheet">
 
      <!-- Custom styles for this template-->
-     <link href="<?= base_url('assets/')?>css/sb-admin-2.min.css" rel="stylesheet">
+     <link href="<?= base_url('assets/')?>css/sb-admin-2.css" rel="stylesheet">
 
      <link href="<?= base_url('assets/')?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
      <link rel="shortcut icon" href="<?= base_url('assets/')?>img/favicon.ico" type="image/x-icon">
